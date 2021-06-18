@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ProductReviewAuthentication.Models.ViewModels.ProductViewModel>
+@{
+    ViewBag.Title = "List of Product";
+}
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var product in Model)
+        {
+            <div class="col-4 mb-4 col-lg-4">
+                <div class="card">
+                    <div class="card-header ">
+                        <h5 class="card-title text-center" style="color:blue">@product.Name</h5>
+
+                        <div class="card-body">
+                            <div class="card" style="color:hotpink"></div>
+                            Manufacturer: @product.UserName<br /><br />
+                            Product description: @product.Description<br /><br />
+                            Average Rating: @product.AverageRating<br /><br />
+                            <div style="color:indigo">
+                                <a class="btn btn-success" asp-controller="Home" asp-action="Detail"
+                                asp-route-id="@product.Id">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
