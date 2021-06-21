@@ -89,6 +89,7 @@ namespace ProductReviewAuthentication.Controllers
             ViewBag.userName = user.Name;
 
             ViewBag.reviewList = _reviewService.GetEachReview(model.ProductId);
+
             var product = _productService.FindProductById(model.Id);
 
             if (product == null)
